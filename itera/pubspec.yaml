@@ -4,5 +4,6 @@ description: A sample web application
 dependencies:
   browser: any
   angular: 0.13.0
+  json_object: any
 dev_dependencies:
 #  unittest: any
