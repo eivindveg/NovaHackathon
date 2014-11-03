@@ -18,4 +18,8 @@ class LoanRequest {
     this.loanRaisingMonth = now.month;
     this.loanRaisingYear = now.year;
   }
+
+  String toJson() {
+    return "{ principalAmount: ${principalAmount}, loanRaisingMonth: ${loanRaisingMonth}, loanRaisingYear: ${loanRaisingYear}, annualNominalInterestRate: ${annualNominalInterestRate}, totalNumberOfPayments: ${totalNumberOfPayments}}";
+  }
 }

@@ -7,13 +7,14 @@ import "package:json_object/json_object.dart";
 
 
 void main() {
-
-  applicationFactory().run();
-  querySelector("#form").children.forEach((e) =>
-    e..onChange.listen(loadData));
+  //applicationFactory().run();
+  print("Started");
+  querySelector("form").querySelectorAll("input").forEach((e) =>
+  e..onChange.listen(loadData));
 }
 
 void loadData(Event event) {
+  print("Updated");
   FormElement form = document.querySelector("form");
   InputElement sumElement = form.querySelector("#sum");
   int principalAmount = int.parse(sumElement.value);
@@ -24,9 +25,12 @@ void loadData(Event event) {
 
   LoanRequest loanRequest = new LoanRequest(interestRate, downPaymentTime, principalAmount);
   String json = JSON.encode(loanRequest);
+  json += ", callback:\"callbackForJsonpApi\"";
+  print(json);
   String path = "https://cfs-ws-itera.cicero.no/cfo/6/ws/rest/calculator/calculateLoan";
   HttpRequest request = new HttpRequest();
   request.open("GET", path);
   request.send(json);
   JsonObject response = new JsonObject.fromJsonString(request.responseText);
+  print(response);
 }
