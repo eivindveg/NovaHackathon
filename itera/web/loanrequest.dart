@@ -19,7 +19,12 @@ class LoanRequest {
     this.loanRaisingYear = now.year;
   }
 
-  String toJson() {
-    return "{ principalAmount: ${principalAmount}, loanRaisingMonth: ${loanRaisingMonth}, loanRaisingYear: ${loanRaisingYear}, annualNominalInterestRate: ${annualNominalInterestRate}, totalNumberOfPayments: ${totalNumberOfPayments}}";
+  Map toJson() {
+    Map map = new Map();
+    map["principalAmount"] = principalAmount;
+    map["loanRaisingMonth"] = loanRaisingMonth;
+    map["loanRaisingYear"] = loanRaisingYear;
+    map["annualNominalInterestRate"] = annualNominalInterestRate;
+    return map;
   }
 }
