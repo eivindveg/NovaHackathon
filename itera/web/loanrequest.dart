@@ -14,7 +14,7 @@ class LoanRequest {
     this.principalAmount = principalAmount;
     this.annualNominalInterestRate = annualNominalInterestRate;
     this.totalNumberOfPayments = totalNumberOfPayments;
-    DateTime now = DateTime.now();
+    DateTime now = new DateTime.now();
     this.loanRaisingMonth = now.month;
     this.loanRaisingYear = now.year;
   }
