@@ -1,21 +1,36 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8">
     <title>Itera</title>
-    <link rel="stylesheet" href="itera.css">
+      <link rel="stylesheet" href="itera.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   </head>
-  <body>
-    <h1>Itera</h1>
+    <body>
+        <div>
+            <h1>Lånekalkulator</h1>
+            <form id="form">
+                <label for="principalAmount">Lånesum:</label>
+                <input type="number" name="principalAmount" value="">
+                <br />
+                <label for="interestRate">Rentesats:</label>
+                <input type="number" name="interestRate" value="">
+                <br />
+                <label for="repayment">Nedbetalingstid i %:</label>
+                <input type="number" name="repayment" value="">
+                <br />
+                <input type="button" value="Kalkulér" />
+             </form>
+        </div>
 
-    <p>Hello world from Dart!</p>
 
-    <div id="sample_container_id">
-      <p id="sample_text_id">Click me!</p>
-    </div>
 
-    <script type="application/dart" src="itera.dart"></script>
-    <script src="packages/browser/dart.js"></script>
-  </body>
+
+        <script type="application/dart" src="itera.dart"></script>
+        <script src="packages/browser/dart.js"></script>
+    </body>
 </html>
