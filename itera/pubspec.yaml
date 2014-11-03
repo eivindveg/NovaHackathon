@@ -3,5 +3,6 @@ version: 0.0.1
 description: A sample web application
 dependencies:
   browser: any
+  angular: 0.13.0
 dev_dependencies:
 #  unittest: any
