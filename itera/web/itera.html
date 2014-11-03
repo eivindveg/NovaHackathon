@@ -1,162 +1,286 @@
 ﻿<!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Itera</title>
-      <link rel="stylesheet" href="itera.css">
-      <!-- jQuery -->
-      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
-      <style>
-          .hiddenRow { padding: 0 !important; }
+<head>
+<meta charset="utf-8">
+<title>Itera</title>
+<link rel="stylesheet" href="itera.css">
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
+<style>
+    .hiddenRow { padding: 0 !important; }
 
-          body {
-              background: url(bg.png) center top repeat;
-              color: #28201b;
-              font-family: Arial, Verdana, Helvetica, sans-serif;
-              font-size: 13px;
-              line-height: 1.4;
-              position: relative;
-              margin-top: 100px;
-          }
+    body {
+        background: url(bg.png) center top repeat;
+        color: #28201b;
+        font-family: Arial, Verdana, Helvetica, sans-serif;
+        font-size: 13px;
+        line-height: 1.4;
+        position: relative;
+        margin-top: 100px;
+    }
 
-          .content {
-              background: url(box_bg.png) left top repeat-y;
-              clear: both;
-              float: left;
-              min-height: 100px;
-              padding: 12px 20px 11px 20px;
-              width: 378px;
-          }
+    .content {
+        background: url(box_bg.png) left top repeat-y;
+        clear: both;
+        float: left;
+        min-height: 100px;
+        padding: 12px 20px 11px 20px;
+        width: 378px;
+    }
 
-          h1 {
-              color: #fff;
-              font-size: 26px;
-              letter-spacing: 1px;
-              line-height: 27px;
-              text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
-          }
+    h2 {
+        color: #fff !important;
+        font-size: 26px;
+        letter-spacing: 1px;
+        line-height: 27px;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+    }
 
-          h2 {
-              color: #fff;
-              font-size: 23px;
-              letter-spacing: 1px;
-              line-height: 27px;
-              text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
-          }
+    h3 {
+        color: #fff !important;
+        letter-spacing: 1px;
+        line-height: 27px;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+        font-size: 45px !important;
+    }
 
-          label {
-              color: #fff;
-              font-size: 23px;
-              letter-spacing: 1px;
-              line-height: 27px;
-              text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
-          }
+    label {
+        color: #fff !important;
+        font-size: 23px;
+        letter-spacing: 1px;
+        line-height: 27px;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+    }
 
-          th {
-              color: #fff;
-              font-size: 20px;
-              letter-spacing: 1px;
-              line-height: 27px;
-              text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
-          }
+    .inputHeight { height: 35px !important;}
 
-          td {
-              color: #fff;
-              font-size: 18px;
-              letter-spacing: 1px;
-              line-height: 27px;
-              text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
-          }
+    th {
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 27px;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+    }
 
-          .left_col {
-              float: left;
-              padding-bottom: 8px;
-              padding-top: 8px;
-              position: relative;
-              width: 400px;
-          }
+    td {
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: 1px;
+        line-height: 27px;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, .9);
+    }
 
-          .left_col:before {
-              background: url(box_top.png) left top no-repeat;
-              content: '';
-              height: 8px;
-              left: 0;
-              position: absolute;
-              top: 0;
-              width: 398px;
-          }
-      </style>
-  </head>
-    <body>
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-sm-6">
-                    <div id="dataInput" class="content left_col">
-                        <h1>Lånekalkulator</h1>
-                        <form id="form">
-                            <label for="sum">Lånesum:</label>
-                            <input id="sum" type="number" name="principalAmount" value="">
-                            <br />
-                            <label for="rate">Rentesats:</label>
-                            <input id="rate" type="number" name="interestRate" value="">
-                            <br />
-                            <label for="repayment">Nedbetalingstid i %:</label>
-                            <input id="repayment" type="number" name="repayment" value="">
-                            <br />
-                            <input type="button" value="Kalkulér" />
-                        </form>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div id="info">
-                        <h1>Lånebeløp</h1>
-                        <h2>2 000 000 kr</h2>
-                        <h1>Månedsbeløp</h1>
-                        <h2>10 000 kr</h2>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div id="paymentPlan">
-                        <table class="table table-condensed" style="border-collapse:collapse;">
-                            <thead>
-                                <tr>
-                                    <th>År</th>
-                                    <th>Måned</th>
-                                    <th>Å betale</th>
-                                    <th>Avdrag</th>
-                                    <th>Rente</th>
-                                    <th>Resterende beløp å betale</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
-                                    <td>2014</td>
-                                    <td>Samlet +</td>
-                                    <td>10 000 kr</td>
-                                    <td class="text-success">5 500 kr</td>
-                                    <td class="text-error">4 500 kr</td>
-                                    <td class="text-success"> 1 500 000 kr</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" class="hiddenRow"><div class="accordian-body collapse" id="demo1"> Januar </div> </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    .left_col {
+        float: left;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        position: relative;
+        width: 400px;
+    }
+
+    .left_col:before {
+        background: url(box_top.png) left top no-repeat;
+        content: '';
+        height: 8px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 398px;
+    }
+
+
+
+    .generate {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background-color: #44c767;
+        border: 1px solid #18ab29;
+        border-radius: 4px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: arial;
+        font-size: 17px;
+        padding: 11px 31px;
+        text-decoration: none !important;
+        text-shadow: 0px 1px 0px #2f6627;
+    }
+
+    .generate:hover {
+        background-color: #44c768;
+        border: 1px solid #18aa20;
+        color: #ffffff !important;
+    }
+
+    .infoGreen {
+        color: #18aa20 !important;
+    }
+
+    #paymentPlan {
+        margin-top: 100px;
+    }
+
+    .rowMargin {
+        margin-top: 100px;
+    }
+
+    /* Ribbon */
+
+    h1 {
+        box-shadow:
+        0 0 30px 0 rgba(0, 0, 0, 0.1),
+        0 36px 0 -18px #463c36;
+        color: #8699A0;
+        display: inline-block;
+        font-family: arial, verdana;
+        font-size: 14px;
+        line-height: 28px;
+        margin: 120px 0;
+        outline: none;
+        padding: 14px 30px;
+        position: relative;
+        text-shadow: 0 0 1px #758890;
+        text-transform: uppercase;
+    }
+
+    h1:before {
+        border: 28px solid rgba(0, 0, 0, 0);
+        border-left: 28px solid #463c36;
+        border-right: 28px solid #463c36;
+        content: '';
+        height: 0;
+        left: -15%;
+        position: absolute;
+        top: 18px;
+        width: 130%;
+        z-index: -1;
+    }
+
+
+    h1:after {
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-top: 18px solid #99acb2;
+        content: '';
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    h1, h1:before {
+        background-image:
+        linear-gradient(
+                transparent 8%,
+                rgba(0, 0, 0, 0.1) 8%,
+                rgba(0, 0, 0, 0.1) 14%,
+                transparent 14%,
+                transparent 86%,
+                rgba(0, 0, 0, 0.1) 86%,
+                rgba(0, 0, 0, 0.1) 92%,
+                transparent 92%
+        ),
+        linear-gradient(
+                rgba(255, 255, 255, 0.75),
+                rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(0, 0, 0, 0.1) 40%,
+                rgba(0, 0, 0, 0.1) 60%,
+                transparent 60%
+        ),
+        linear-gradient(white, white);
+        background-size:
+        cover,
+        cover,
+        4px 4px,
+        cover;
+    }
+
+    h1, h1:before, h1:after {
+        background-origin: border-box;
+        box-sizing: border-box;
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Lånekalkulator</h1>
+
+    <div class="row rowMargin">
+        <div class="col-sm-6">
+            <div id="dataInput" class="content left_col">
+
+                <form id="form" style="padding: 20px;">
+                    <label for="sum">Lånesum:</label>
+                    <input class="inputHeight" id="sum" type="number" name="principalAmount" value="">
+                    <br />
+                    <label for="rate">Rentesats:</label>
+                    <input class="inputHeight" id="rate" type="number" name="interestRate" value="">
+                    <br />
+                    <label for="repayment">Nedbetalingstid i %:</label>
+                    <input class="inputHeight" id="repayment" type="number" name="repayment" value="">
+                    <br />
+                    <a href="#" class="generate">Kalkulér</a>
+
+                </form>
             </div>
-        
         </div>
+        <div class="col-sm-6">
+            <div id="info">
+                <h2>Lånebeløp</h2>
+                <h3 class="infoGreen">2 000 000 kr</h3>
+                <h2>Månedsbeløp</h2>
+                <h3 class="infoGreen">10 000 kr</h3>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div id="paymentPlan">
+                <table class="table table-condensed" style="border-collapse:collapse;">
+                    <thead>
+                    <tr>
+                        <th>År</th>
+                        <th>Måned</th>
+                        <th>Å betale</th>
+                        <th>Avdrag</th>
+                        <th>Rente</th>
+                        <th>Resterende beløp å betale</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                        <td>2014</td>
+                        <td>Samlet +</td>
+                        <td>10 000 kr</td>
+                        <td class="text-success">5 500 kr</td>
+                        <td class="text-error">4 500 kr</td>
+                        <td class="text-success"> 1 500 000 kr</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow"><div class="accordian-body collapse" id="demo1"> Januar </div> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 
-        <script type="application/dart" src="itera.dart"></script>
-        <script src="packages/browser/dart.js"></script>
-    </body>
+<script type="application/dart" src="itera.dart"></script>
+<script src="packages/browser/dart.js"></script>
+</body>
 </html>
